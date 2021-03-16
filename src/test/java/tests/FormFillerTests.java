@@ -37,15 +37,13 @@ public class FormFillerTests {
         $("#subjectsInput").setValue("Math");
         $("#subjectsInput").pressEnter();
         $("[for='hobbies-checkbox-3']").click();
-        $("#uploadPicture").uploadFile(new File("src/test/java/Files/testing.gif"));
+        $("#uploadPicture").uploadFromClasspath("testing.gif");
         $("#currentAddress").setValue("World");
-        $("#react-select-3-input").setValue("Haryana");
-        $("#react-select-3-input").pressEnter();
-        $("#react-select-4-input").setValue("Panipat");
-        $("#react-select-4-input").pressEnter();
+        $("#react-select-3-input").setValue("Haryana").pressEnter();
+        $("#react-select-4-input").setValue("Panipat").pressEnter();
         $("#submit").click();
 
-        $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text("Anna"),
+        $(".table").shouldHave(text("Anna"),
                 text("Khalak"),
                 text("Anna@anna.an"),
                 text("Female"),
@@ -57,6 +55,4 @@ public class FormFillerTests {
                 text("Haryana Panipat"));
         
     }
-
-
 }
