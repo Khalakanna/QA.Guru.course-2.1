@@ -34,8 +34,7 @@ public class FormFillerTests {
         $(".react-datepicker__month-select").selectOptionByValue("7");
         $(".react-datepicker__year-select").selectOptionByValue("1991");
         $("[aria-label='Choose Friday, August 30th, 1991']").click();
-        $("#subjectsInput").setValue("Math");
-        $("#subjectsInput").pressEnter();
+        $("#subjectsInput").setValue("Math").pressEnter();
         $("[for='hobbies-checkbox-3']").click();
         $("#uploadPicture").uploadFromClasspath("testing.gif");
         $("#currentAddress").setValue("World");
@@ -53,6 +52,5 @@ public class FormFillerTests {
                 text("testing.gif"),
                 text("World"),
                 text("Haryana Panipat"));
-        
     }
 }
